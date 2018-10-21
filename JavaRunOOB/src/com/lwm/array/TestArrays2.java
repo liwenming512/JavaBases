@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class TestArrays2 {
 
-	//Êı×éÀ©Èİ£¬À©ÈİºóÊı×éÔªËØÎª0
+	//æ•°ç»„æ‰©å®¹ï¼Œæ‰©å®¹åæ•°ç»„å…ƒç´ ä¸º0
 	public static void main(String[] args) {
 		int[] a = {10, 20, 30, 40, 50};
 		a = Arrays.copyOf(a, a.length + 1);

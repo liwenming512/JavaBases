@@ -15,29 +15,29 @@ public class TestArrays {
 
 	public static void main(String[] args) {
 		int[] array = new int[5];
-		//Êı×éÔªËØÈ«¸³Öµ5
+		//æ•°ç»„å…ƒç´ å…¨èµ‹å€¼5
 		Arrays.fill(array, 5);
 		output(array);
 		
-		//µÚ2-3¸öÔªËØ¸³Öµ8
+		//ç¬¬2-3ä¸ªå…ƒç´ èµ‹å€¼8
 		Arrays.fill(array, 2, 4, 8);
 		output(array);
 		
 		int[] array1 = {7, 8, 3, 2, 12, 6, 3, 5, 4};
-		//µÚ2-6¸öÔªËØÅÅĞò
+		//ç¬¬2-6ä¸ªå…ƒç´ æ’åº
 		Arrays.sort(array1, 2, 7);
 		output(array1);
 		
-		//¶ÔÕû¸öÊı×éÅÅĞò
+		//å¯¹æ•´ä¸ªæ•°ç»„æ’åº
 		Arrays.sort(array1);
 		output(array1);
 		
-		//ÅĞ¶ÏÊı×éÊÇ·ñÏàµÈ
+		//åˆ¤æ–­æ•°ç»„æ˜¯å¦ç›¸ç­‰
 		System.out.println(Arrays.equals(array, array1));
 		int[] array2 = array1.clone();
 		System.out.println(Arrays.equals(array1, array2));
 		
-		//Ê¹ÓÃ¶ş·ÖËÑË÷Ëã·¨²éÕÒÖ¸¶¨ÔªËØËùÔÚµÄÏÂ±ê£¨±ØĞëÊÇÅÅĞòºÃµÄ£¬·ñÔò½á¹û²»ÕıÈ·£©
+		//ä½¿ç”¨äºŒåˆ†æœç´¢ç®—æ³•æŸ¥æ‰¾æŒ‡å®šå…ƒç´ æ‰€åœ¨çš„ä¸‹æ ‡ï¼ˆå¿…é¡»æ˜¯æ’åºå¥½çš„ï¼Œå¦åˆ™ç»“æœä¸æ­£ç¡®ï¼‰
 		Arrays.sort(array1);
 		System.out.println(Arrays.binarySearch(array1, 3));
 		System.out.println(Arrays.binarySearch(array1, 9));

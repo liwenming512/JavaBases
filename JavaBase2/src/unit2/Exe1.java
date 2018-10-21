@@ -6,7 +6,6 @@ public class Exe1 {
 		Exe1Class exe1 = new Exe1Class();
 		System.out.println(exe1.getIntValue());
 		System.out.println(exe1.getCharValue());
-
 	}
 
 }

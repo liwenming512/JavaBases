@@ -12,13 +12,13 @@ public class BubbleSort {
 					arr[j] = temp;
 				}
 			}
-			String hint = "µÚ" + (i + 1) + "´ÎÅÅĞò½á¹û£º";
+			String hint = "ç¬¬" + (i + 1) + "æ¬¡æ’åºç»“æœï¼š";
 			for(int k = 0; k < arr.length; k++){
 				hint = hint + arr[k] + "\t";
 			}
 			System.out.println(hint);
 		}
-		String ret = "ÅÅĞò½á¹û£º";
+		String ret = "æ’åºç»“æœï¼š";
 		for(int i = 0; i < arr.length; i++){
 			ret = ret + arr[i] + "\t";
 		}

@@ -1,0 +1,12 @@
+package com.lwm.IO;
+
+import java.io.File;
+
+public class CreateDir {
+
+	public static void main(String[] args) {
+		String dirname = "/tmp/user/java/bin";
+		File f = new File(dirname);
+		f.mkdir();
+	}
+}
