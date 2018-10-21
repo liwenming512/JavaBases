@@ -38,7 +38,9 @@ public class StaticInitialization {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		System.out.println("Creating new Cupboard() in main");
 		new CupBoard();
+		System.out.println("Creating new Cupboard() in main");
 		new CupBoard();
 		table.f2(1);
 		cupboard.f3(1);
