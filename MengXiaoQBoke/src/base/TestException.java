@@ -5,7 +5,7 @@ public class TestException {
 	public static void main(String[] args) {
 		int a = 1;
 		int b = 0;
-		System.out.println("a/bµÄÖµÊÇ£º" + a/b);
+		System.out.println("a/bçš„å€¼æ˜¯ï¼š" + a/b);
 	}
 
 }
