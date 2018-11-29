@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+    <bean id="duke"
+    	class="com.springinaction.springidol.Juggler" >
+    	<constructor-arg value="15" />
+    </bean>
+    <bean id="sonnet29" class="com.springinaction.springidol.Sonnet29" />
+    <bean id="duke2" class="com.springinaction.springidol.PoeticJugger">
+    	<constructor-arg value="15" />
+    	<constructor-arg ref="sonnet29"/>
+    </bean>
+    <bean id="theStage" class="com.springinaction.springidol.Stage"
+    	factory-method="getInstance" />
+	<bean id="duke3" class="com.springinaction.springidol.PoeticJugger">
+    	<constructor-arg value="15" />
+    	<constructor-arg>
+    		<bean class="com.springinaction.springidol.Sonnet29" />
+    	</constructor-arg>
+    </bean>
+ </beans>
