@@ -2,6 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:aop="http://www.springframework.org/schema/aop"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
     http://www.springframework.org/schema/aop 
@@ -47,4 +48,37 @@
     		</map>
     	</property>
     </bean>
+    <bean id="audience" class="com.springinaction.springidol.Audience"/>
+    <!-- 冗余配置 -->
+    <!-- <aop:config>
+    	<aop:aspect ref="audience">
+    		<aop:before pointcut="execution(* com.springinaction.springidol.Performer.perform(..))" 
+    			method="takeSeats"/>
+    		<aop:before pointcut="execution(* com.springinaction.springidol.Performer.perform(..))"
+    			method="turnOffCellPhones"/>
+			<aop:after-returning pointcut="execution(* com.springinaction.springidol.Performer.perform(..))" 
+				method="applaud"/>
+			<aop:after-throwing pointcut="execution(* com.springinaction.springidol.Performer.perform(..))" 
+				method="demandRefund"/>	
+    	</aop:aspect>
+    </aop:config> -->
+    <!-- 简单配置 -->
+    <!-- <aop:config>
+    	<aop:aspect ref="audience">
+			<aop:pointcut expression="execution(* com.springinaction.springidol.Performer.perform(..))" 
+				id="performance"/>
+			<aop:before pointcut-ref="performance" method="takeSeats"/>
+			<aop:before pointcut-ref="performance" method="turnOffCellPhones"/>
+			<aop:after-returning pointcut-ref="performance" method="applaud"/>
+			<aop:after-throwing pointcut-ref="performance" method="demandRefund"/>
+    	</aop:aspect>
+    </aop:config>  -->
+    <!-- 环绕式声明 -->
+	<aop:config>
+		<aop:aspect ref="audience">
+			<aop:pointcut expression="execution(* com.springinaction.springidol.Performer.perform(..))"
+				id="performance2"/>
+			<aop:around pointcut-ref="performance2" method="watchPerformance"/>
+		</aop:aspect>
+	</aop:config>
  </beans>
