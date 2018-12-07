@@ -75,7 +75,7 @@
     </aop:config>  -->
     <!-- 环绕式声明 -->
 	<aop:config>
-		<aop:aspect ref="audience">
+		<aop:aspect ref="magician">
 			<aop:pointcut expression="execution(* com.springinaction.springidol.Performer.perform(..))"
 				id="performance2"/>
 			<aop:around pointcut-ref="performance2" method="watchPerformance"/>
