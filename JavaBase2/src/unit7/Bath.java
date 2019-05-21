@@ -10,6 +10,10 @@ class Soap{
 		Print.print("Soup()");
 		s = "Constructed";
 	}
+	
+	public String toString(){
+		return s;
+	}
 }
 
 public class Bath {
