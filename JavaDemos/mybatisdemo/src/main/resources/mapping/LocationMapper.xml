@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.demo.dao.LocationDao">
+    <!--基本数据结果集-->
+    <resultMap id="LocationResultMap" type="com.mybatis.demo.model.LocationVo">
+        <id column="code" property="code" />
+        <id column="name" property="name" />
+        <id column="org_type" property="orgType" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        t.code,
+        t.name,
+        t.org_type
+    </sql>
+
+    <select id="selectList" resultMap="LocationResultMap" parameterType="com.mybatis.demo.model.OrgTypeEnum" >
+        select
+        <include refid="Base_Column_List" />
+        from bd_location t
+        where t.org_type = #{orgType}
+    </select>
+
+    <select id="selectListByVo" resultMap="LocationResultMap" parameterType="com.mybatis.demo.model.LocationVo">
+        select
+        <include refid="Base_Column_List"/>
+        from bd_location t
+        where t.org_type = #{orgType} and t.name like '%'||#{name}||'%'
+    </select>
+
+    <select id="get" resultMap="LocationResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List" />
+        from bd_location t
+        where t.code = #{code, jdbcType=VARCHAR}
+    </select>
+
+    <insert id="insert">
+        insert into bd_location
+        (code, name, org_type)
+        values
+        (#{code}, #{name}, #{orgType})
+    </insert>
+
+    <update id="update">
+        update bd_location t set org_type = #{orgType} where code = #{code}
+    </update>
+</mapper>
