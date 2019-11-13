@@ -19,7 +19,7 @@
     <mysqlVersion>5.1.47</mysqlVersion>
     <c3p0Version>0.9.1.2</c3p0Version>
     <log4jVersion>1.2.17</log4jVersion>
-    <fileuploadVersion>1.3.1</fileuploadVersion>
+    <fileuploadVersion>1.3.3</fileuploadVersion>
     <lombokVersion>1.16.10</lombokVersion>
     <hibernateC3p0Version>4.3.6.Final</hibernateC3p0Version>
   </properties>
