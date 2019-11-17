@@ -26,6 +26,19 @@ public class LocationVo implements Serializable {
      */
     private OrgTypeEnum orgType;
 
+    /**
+     * 站点状态
+     */
+    private StatusTypeEnum status;
+
+    public StatusTypeEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusTypeEnum status) {
+        this.status = status;
+    }
+
     public String getCode() {
         return code;
     }

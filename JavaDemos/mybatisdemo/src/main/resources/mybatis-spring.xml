@@ -3,7 +3,14 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeHandlers>
+<<<<<<< Updated upstream
         <typeHandler handler="com.mybatis.demo.typehandler.GenericTranslatableEnumHandler"
                      javaType="com.mybatis.demo.model.OrgTypeEnum"/>
+=======
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
+                     javaType="com.mybatis.demo.model.OrgTypeEnum"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
+                     javaType="com.mybatis.demo.model.StatusTypeEnum"/>
+>>>>>>> Stashed changes
     </typeHandlers>
 </configuration>

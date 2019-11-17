@@ -2,6 +2,7 @@ package com.mybatis.demo.dao;
 
 import com.mybatis.demo.model.LocationVo;
 import com.mybatis.demo.model.OrgTypeEnum;
+import com.mybatis.demo.model.StatusTypeEnum;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -13,7 +14,9 @@ import java.util.List;
 @Repository
 public interface LocationDao {
 
-    List<LocationVo> selectList(OrgTypeEnum orgType);
+    List<LocationVo> selectListByOrgType(OrgTypeEnum orgType);
+
+    List<LocationVo> selectListByStatus(StatusTypeEnum statusType);
 
     List<LocationVo> selectListByVo(LocationVo locationVo);
 

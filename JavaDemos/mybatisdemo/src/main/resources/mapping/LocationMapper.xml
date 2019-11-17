@@ -4,17 +4,19 @@
     <!--基本数据结果集-->
     <resultMap id="LocationResultMap" type="com.mybatis.demo.model.LocationVo">
         <id column="code" property="code" />
-        <id column="name" property="name" />
-        <id column="org_type" property="orgType" />
+        <result column="name" property="name" />
+        <result column="org_type" property="orgType" />
+        <result column="status" property="status"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         t.code,
         t.name,
-        t.org_type
+        t.org_type,
+        t.status
     </sql>
 
-    <select id="selectList" resultMap="LocationResultMap" parameterType="com.mybatis.demo.model.OrgTypeEnum" >
+    <select id="selectListByOrgType" resultMap="LocationResultMap" parameterType="com.mybatis.demo.model.OrgTypeEnum" >
         select
         <include refid="Base_Column_List" />
         from bd_location t
@@ -25,7 +27,7 @@
         select
         <include refid="Base_Column_List"/>
         from bd_location t
-        where t.org_type = #{orgType} and t.name like '%'||#{name}||'%'
+        where t.org_type = #{orgType} and t.status = #{status} and t.name like '%'||#{name}||'%'
     </select>
 
     <select id="get" resultMap="LocationResultMap" parameterType="java.lang.String">
@@ -35,14 +37,21 @@
         where t.code = #{code, jdbcType=VARCHAR}
     </select>
 
+    <select id="selectListByStatus" resultMap="LocationResultMap" parameterType="com.mybatis.demo.model.StatusTypeEnum">
+        select
+        <include refid="Base_Column_List" />
+        from bd_location t
+        where t.status = #{status}
+    </select>
+
     <insert id="insert">
         insert into bd_location
-        (code, name, org_type)
+        (code, name, org_type, status)
         values
-        (#{code}, #{name}, #{orgType})
+        (#{code}, #{name}, #{orgType}, #{status})
     </insert>
 
-    <update id="update">
-        update bd_location t set org_type = #{orgType} where code = #{code}
+    <update id="update" parameterType="com.mybatis.demo.model.LocationVo">
+        update bd_location t set org_type = #{orgType}, status = #{status} where code = #{code}
     </update>
 </mapper>

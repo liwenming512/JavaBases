@@ -2,6 +2,7 @@ package com.mybatis.demo.controller;
 
 import com.mybatis.demo.model.LocationVo;
 import com.mybatis.demo.model.OrgTypeEnum;
+import com.mybatis.demo.model.StatusTypeEnum;
 import com.mybatis.demo.service.LocationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,9 +23,14 @@ public class LocationController {
 
     Logger logger = LoggerFactory.getLogger(LocationController.class);
 
-    @RequestMapping(value = "/selectList", method = RequestMethod.GET)
-    public List<LocationVo> selectList(@RequestParam OrgTypeEnum orgType){
-        return locationService.selectList(orgType);
+    @RequestMapping(value = "/selectListByOrgType", method = RequestMethod.GET)
+    public List<LocationVo> selectListByOrgType(@RequestParam OrgTypeEnum orgType){
+        return locationService.selectListByOrgType(orgType);
+    }
+
+    @RequestMapping(value = "/selectListByStatus", method = RequestMethod.GET)
+    public List<LocationVo> selectListByStatus(@RequestParam StatusTypeEnum status){
+        return locationService.selectListByStatus(status);
     }
 
     @RequestMapping(value = "/selectListByVo", method = RequestMethod.POST)

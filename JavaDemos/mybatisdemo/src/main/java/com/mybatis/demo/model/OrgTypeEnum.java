@@ -5,10 +5,11 @@ package com.mybatis.demo.model;
  */
 public enum OrgTypeEnum implements Translatable {
 
-    FENBO(11601, "分拨"),
-    WANGDIAN(11603, "网点"),
-    GONGSI(11602, "公司");
+    FENBO("分拨"),
+    WANGDIAN("网点"),
+    GONGSI("公司");
 
+<<<<<<< Updated upstream
     private String nameCn;
     private int code;
 
@@ -26,4 +27,19 @@ public enum OrgTypeEnum implements Translatable {
     public String getNameCn() {
         return this.nameCn;
     }
+=======
+    private String value;
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    OrgTypeEnum(String value){
+        this.value = value;
+    }
+>>>>>>> Stashed changes
 }

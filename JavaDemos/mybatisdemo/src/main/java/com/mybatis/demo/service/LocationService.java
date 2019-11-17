@@ -2,6 +2,7 @@ package com.mybatis.demo.service;
 
 import com.mybatis.demo.model.LocationVo;
 import com.mybatis.demo.model.OrgTypeEnum;
+import com.mybatis.demo.model.StatusTypeEnum;
 
 import java.util.List;
 
@@ -10,7 +11,9 @@ import java.util.List;
  */
 public interface LocationService {
 
-    List<LocationVo> selectList(OrgTypeEnum orgType);
+    List<LocationVo> selectListByOrgType(OrgTypeEnum orgType);
+
+    List<LocationVo> selectListByStatus(StatusTypeEnum statusType);
 
     List<LocationVo> selectListByVo(LocationVo locationVo);
 
