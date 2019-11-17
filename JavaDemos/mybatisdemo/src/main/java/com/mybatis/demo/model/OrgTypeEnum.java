@@ -3,23 +3,25 @@ package com.mybatis.demo.model;
 /**
  * Created by Administrator on 2019/11/13.
  */
-public enum OrgTypeEnum {
+public enum OrgTypeEnum implements ValuedEnum {
 
-    FENBO("分拨"),
-    WANGDIAN("网点"),
-    GONGSI("公司");
+    FENBO(11601,"分拨"),
+    WANGDIAN(11603,"网点"),
+    GONGSI(11602,"公司");
 
+    private int key;
     private String value;
+
+    public int getKey(){
+        return key;
+    }
 
     public String getValue() {
         return value;
     }
 
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    OrgTypeEnum(String value){
+    OrgTypeEnum(int key, String value){
+        this.key = key;
         this.value = value;
     }
 }

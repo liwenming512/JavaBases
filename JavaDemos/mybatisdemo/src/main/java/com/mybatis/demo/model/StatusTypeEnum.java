@@ -6,22 +6,24 @@ import java.util.Map;
 /**
  * Created by Administrator on 2019/11/17.
  */
-public enum StatusTypeEnum {
+public enum StatusTypeEnum implements ValuedEnum{
 
-    TONGGUO("通过"),
-    BOHUI("驳回");
+    TONGGUO(100, "通过"),
+    BOHUI(101, "驳回");
 
+    private int key;
     private String value;
+
+    public int getKey(){
+        return key;
+    }
 
     public String getValue() {
         return value;
     }
 
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    StatusTypeEnum(String value){
+    StatusTypeEnum(int key, String value){
+        this.key = key;
         this.value = value;
     }
 }
