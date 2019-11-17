@@ -1,9 +1,12 @@
 package com.mybatis.demo.typehandler;
 
+import com.mybatis.demo.model.OrgTypeEnum;
+import com.mybatis.demo.model.StatusTypeEnum;
 import com.mybatis.demo.model.ValuedEnum;
 import jdk.nashorn.internal.objects.annotations.Constructor;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
+import org.apache.ibatis.type.MappedTypes;
 
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
@@ -15,6 +18,7 @@ import java.util.Map;
 /**
  * Created by Administrator on 2019/11/17.
  */
+@MappedTypes(value = {OrgTypeEnum.class, StatusTypeEnum.class})
 public class ValuedEnumTypeHandler<E extends Enum<E>> extends BaseTypeHandler<E> {
     private Class<E> type;
     private Map<Integer, E> map = new HashMap<>();
