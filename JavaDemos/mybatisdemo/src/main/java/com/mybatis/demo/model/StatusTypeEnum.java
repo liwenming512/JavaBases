@@ -22,6 +22,10 @@ public enum StatusTypeEnum implements ValuedEnum{
         return value;
     }
 
+    public String getName(){
+        return this.name();
+    }
+
     StatusTypeEnum(int key, String value){
         this.key = key;
         this.value = value;

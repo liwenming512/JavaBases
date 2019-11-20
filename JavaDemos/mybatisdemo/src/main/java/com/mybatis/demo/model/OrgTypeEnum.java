@@ -20,6 +20,10 @@ public enum OrgTypeEnum implements ValuedEnum {
         return value;
     }
 
+    public String getName(){
+        return this.name();
+    }
+
     OrgTypeEnum(int key, String value){
         this.key = key;
         this.value = value;
