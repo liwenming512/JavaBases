@@ -9,7 +9,7 @@ public enum OrgTypeEnum implements ValuedEnum {
     WANGDIAN(11603,"网点"),
     GONGSI(11602,"公司");
 
-    private int key;
+    private Integer key;
     private String value;
 
     public int getKey(){

@@ -11,7 +11,7 @@ public enum StatusTypeEnum implements ValuedEnum{
     TONGGUO(100, "通过"),
     BOHUI(101, "驳回");
 
-    private int key;
+    private Integer key;
     private String value;
 
     public int getKey(){
