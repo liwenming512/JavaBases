@@ -63,6 +63,7 @@ public class CADSystem extends Shape{
 		print("Combined Constructor");
 	}
 	
+	@Override
 	public void dispose(){
 		t.dispose();
 		c.dispose();

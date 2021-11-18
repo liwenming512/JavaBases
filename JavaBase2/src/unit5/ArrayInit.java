@@ -10,7 +10,7 @@ public class ArrayInit {
 			new Integer(2),
 			3,
 		};
-		Integer[] b = {
+		Integer[] b = new Integer[] {
 			new Integer(1),
 			new Integer(2),
 			3,

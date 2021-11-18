@@ -8,6 +8,7 @@ class Book {
 	void checkIn(){
 		this.checkedOut = false;
 	}
+	@Override
 	protected void finalize(){
 		if(checkedOut){
 			System.out.println("Error: checked out");
@@ -19,8 +20,10 @@ class Book {
 public class TerminationContition {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Book novel = new Book(true);
+		novel.checkIn();
+		new Book(true);
+		System.gc();
 	}
 
 }

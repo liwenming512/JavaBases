@@ -12,10 +12,17 @@ class Mug{
 public class Mugs {
 	Mug mug1;
 	Mug mug2;
+	Mug mug5 = new Mug(5);
+	static Mug mug3;
 	{
 		mug1 = new Mug(1);
 		mug2 = new Mug(2);
 		System.out.println("mug1 & mug2 initialized");
+	}
+	static Mug mug4 = new Mug(4);
+	static
+	{
+		mug3 = new Mug(3);
 	}
 	Mugs(){
 		System.out.println("Mugs()");
@@ -31,5 +38,4 @@ public class Mugs {
 		new Mugs(1);
 		System.out.println("new Mugs(1) completed");
 	}
-
 }

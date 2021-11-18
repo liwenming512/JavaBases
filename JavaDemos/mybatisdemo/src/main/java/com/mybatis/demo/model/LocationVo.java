@@ -1,6 +1,7 @@
 package com.mybatis.demo.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * Created by Administrator on 2019/11/6.
@@ -62,4 +63,25 @@ public class LocationVo implements Serializable {
     public void setOrgType(OrgTypeEnum orgType) {
         this.orgType = orgType;
     }
+
+    private ContractCostVo contractCostVo;
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public ContractCostVo getContractCostVo() {
+        return contractCostVo;
+    }
+
+    public void setContractCostVo(ContractCostVo contractCostVo) {
+        this.contractCostVo = contractCostVo;
+    }
+}
+
+class ContractCostVo{
+    /**
+     *参考运费
+     */
+    private String refExp;
 }

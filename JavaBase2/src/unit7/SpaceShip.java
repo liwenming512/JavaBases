@@ -8,6 +8,7 @@ public class SpaceShip extends SpaceShipControls {
 		this.name = name;
 	}
 	
+	@Override
 	public String toString(){
 		return name;
 	}
